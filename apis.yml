@@ -41,9 +41,9 @@ apis:
     properties:
       - type: Documentation
         url: https://developers.smartsheet.com/api/smartsheet/openapi
-      - type: API Reference
+      - type: APIReference
         url: https://smartsheet.redoc.ly/
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.smartsheet.com/api/smartsheet/introduction
       - type: Authentication
         url: >-
@@ -55,11 +55,11 @@ common:
     url: https://developers.smartsheet.com/
   - type: Developer Portal
     url: https://developers.smartsheet.com/
-  - type: Sign Up
+  - type: SignUp
     url: https://www.smartsheet.com/try-it
   - type: Pricing
     url: https://www.smartsheet.com/pricing
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/smartsheet-platform
 maintainers:
   - FN: Kin Lane
