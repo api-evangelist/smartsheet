@@ -49,6 +49,8 @@ apis:
         url: >-
           https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/smartsheet-com
   - type: Website
     url: https://www.smartsheet.com
   - type: Documentation
