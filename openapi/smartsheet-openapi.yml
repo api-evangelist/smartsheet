@@ -1,0 +1,259 @@
+openapi: 3.1.0
+info:
+  title: Smartsheet API
+  description: >-
+    Smartsheet is a SaaS work management and collaboration platform. The
+    Smartsheet REST API v2.0 provides programmatic access to sheets, rows,
+    columns, reports, workspaces, users, attachments, and webhooks.
+    Authentication uses OAuth 2.0 or Bearer API access tokens.
+  version: "2.0.0"
+  contact:
+    name: Smartsheet API
+    url: https://developers.smartsheet.com/api/smartsheet/openapi
+servers:
+  - url: https://api.smartsheet.com/2.0
+    description: Smartsheet REST API (US)
+  - url: https://api.smartsheet.eu/2.0
+    description: Smartsheet REST API (EU)
+  - url: https://api.smartsheet.au/2.0
+    description: Smartsheet REST API (AU)
+security:
+  - ApiToken: []
+  - OAuth2: []
+paths:
+  /sheets:
+    get:
+      summary: List sheets
+      description: Retrieve a list of sheets the user has access to.
+      operationId: listSheets
+      tags:
+        - Sheets
+      responses:
+        '200':
+          description: A list of sheets.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      summary: Create sheet
+      description: Create a new sheet in the user's "Sheets" folder.
+      operationId: createSheet
+      tags:
+        - Sheets
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Sheet created.
+          content:
+            application/json:
+              schema:
+                type: object
+  /sheets/{sheetId}:
+    get:
+      summary: Get sheet
+      description: Retrieve the specified sheet, including its rows, columns, and cells.
+      operationId: getSheet
+      tags:
+        - Sheets
+      parameters:
+        - in: path
+          name: sheetId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Sheet details.
+          content:
+            application/json:
+              schema:
+                type: object
+    delete:
+      summary: Delete sheet
+      description: Delete the specified sheet.
+      operationId: deleteSheet
+      tags:
+        - Sheets
+      parameters:
+        - in: path
+          name: sheetId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: Sheet deleted.
+          content:
+            application/json:
+              schema:
+                type: object
+  /sheets/{sheetId}/rows:
+    post:
+      summary: Add rows
+      description: Insert one or more rows into the specified sheet.
+      operationId: addRows
+      tags:
+        - Rows
+      parameters:
+        - in: path
+          name: sheetId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      responses:
+        '200':
+          description: Rows added.
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      summary: Update rows
+      description: Update one or more rows in the specified sheet.
+      operationId: updateRows
+      tags:
+        - Rows
+      parameters:
+        - in: path
+          name: sheetId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: object
+      responses:
+        '200':
+          description: Rows updated.
+          content:
+            application/json:
+              schema:
+                type: object
+  /sheets/{sheetId}/columns:
+    get:
+      summary: List columns
+      description: List the columns of the specified sheet.
+      operationId: listColumns
+      tags:
+        - Columns
+      parameters:
+        - in: path
+          name: sheetId
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: A list of columns.
+          content:
+            application/json:
+              schema:
+                type: object
+  /reports:
+    get:
+      summary: List reports
+      description: List all reports the user has access to.
+      operationId: listReports
+      tags:
+        - Reports
+      responses:
+        '200':
+          description: A list of reports.
+          content:
+            application/json:
+              schema:
+                type: object
+  /webhooks:
+    get:
+      summary: List webhooks
+      description: List the webhooks the user owns.
+      operationId: listWebhooks
+      tags:
+        - Webhooks
+      responses:
+        '200':
+          description: A list of webhooks.
+          content:
+            application/json:
+              schema:
+                type: object
+    post:
+      summary: Create webhook
+      description: Create a new webhook subscription.
+      operationId: createWebhook
+      tags:
+        - Webhooks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Webhook created.
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  securitySchemes:
+    ApiToken:
+      type: http
+      scheme: bearer
+      description: >-
+        Smartsheet API access token sent in the Authorization header as a
+        Bearer token.
+    OAuth2:
+      type: oauth2
+      description: Smartsheet OAuth 2.0 authorization.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://app.smartsheet.com/b/authorize
+          tokenUrl: https://api.smartsheet.com/2.0/token
+          scopes:
+            READ_SHEETS: View sheets
+            WRITE_SHEETS: Edit sheets
+            SHARE_SHEETS: Share sheets
+            DELETE_SHEETS: Delete sheets
+            ADMIN_SHEETS: Sheet admin
+            ADMIN_WORKSPACES: Workspace admin
+            ADMIN_USERS: User admin
+            ADMIN_WEBHOOKS: Webhook admin
+            READ_USERS: View users
+            READ_CONTACTS: View contacts
+tags:
+  - name: Sheets
+    description: Manage Smartsheet sheets.
+  - name: Rows
+    description: Manage rows within sheets.
+  - name: Columns
+    description: Manage columns within sheets.
+  - name: Reports
+    description: Retrieve report data.
+  - name: Webhooks
+    description: Manage webhook subscriptions.
