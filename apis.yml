@@ -63,6 +63,8 @@ common:
     url: https://www.smartsheet.com/pricing
   - type: GitHubOrganization
     url: https://github.com/smartsheet-platform
+  - type: LLMsTxt
+    url: https://developers.smartsheet.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
