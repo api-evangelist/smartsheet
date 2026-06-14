@@ -1,0 +1,1083 @@
+"""
+Smartsheet GraphQL Schema
+Conceptual schema derived from the Smartsheet REST API v2.0.
+Source: https://developers.smartsheet.com/api/smartsheet/openapi
+"""
+
+# ─── Scalars ─────────────────────────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+
+# ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum ColumnType {
+  TEXT_NUMBER
+  DATE
+  DATETIME
+  CONTACT_LIST
+  CHECKBOX
+  PICKLIST
+  DURATION
+  PREDECESSOR
+  AUTO_NUMBER
+  CREATED_BY
+  CREATED_DATE
+  MODIFIED_BY
+  MODIFIED_DATE
+  ABSTRACT_DATETIME
+}
+
+enum AccessLevel {
+  VIEWER
+  EDITOR
+  EDITOR_SHARE
+  ADMIN
+  OWNER
+}
+
+enum ObjectType {
+  SHEET
+  REPORT
+  TEMPLATE
+  FOLDER
+  WORKSPACE
+  DASHBOARD
+  FORM
+}
+
+enum AttachmentType {
+  FILE
+  GOOGLE_DRIVE
+  LINK
+  BOX_COM
+  DROPBOX
+  EVERNOTE
+  EGNYTE
+  ONEDRIVE
+  SMARTSHEET
+}
+
+enum WidgetType {
+  CHART
+  GRIDGANTT
+  IMAGE
+  METRIC
+  RICHTEXT
+  SHORTCUT
+  TITLE
+  WEBCONTENT
+  SHEETSUMMARY
+}
+
+enum AutomationActionType {
+  NOTIFICATION
+  APPROVAL_REQUEST
+  UPDATE_REQUEST
+  MOVE_ROW
+  COPY_ROW
+  LOCK_ROW
+  UNLOCK_ROW
+}
+
+enum EventObjectType {
+  ACCESS_TOKEN
+  ACCOUNT
+  ATTACHMENT
+  AUTOMATION_RULE
+  CELL_LINK
+  COLUMN
+  COMMENT
+  CONTACT
+  DASHBOARD
+  FOLDER
+  GROUP
+  GROUP_MEMBER
+  REPORT
+  ROW
+  SHEET
+  SIGHT
+  TEMPLATE
+  UPDATEREQUEST
+  USER
+  WEBHOOK
+  WORKSPACE
+}
+
+enum EventAction {
+  CREATE
+  UPDATE
+  DELETE
+  DOWNLOAD
+  PUBLISH
+  MOVE
+  SHARE
+  REMOVE_SHARE
+  TRANSFER
+  RENAME
+}
+
+enum ShareType {
+  USER
+  GROUP
+}
+
+enum RowLocation {
+  TOP
+  BOTTOM
+  BEFORE
+  AFTER
+  PARENT
+}
+
+enum FormFieldType {
+  TEXT_NUMBER
+  PICKLIST
+  DATE
+  CHECKBOX
+  CONTACT_LIST
+  ATTACHMENT
+}
+
+enum AlertOperator {
+  EQUAL
+  NOT_EQUAL
+  GREATER_THAN
+  LESS_THAN
+  GREATER_THAN_OR_EQUAL
+  LESS_THAN_OR_EQUAL
+  CONTAINS
+  NOT_CONTAINS
+  BETWEEN
+  NOT_BETWEEN
+  IS_BLANK
+  IS_NOT_BLANK
+  CHANGED
+  NOT_CHANGED
+}
+
+enum BackupStatus {
+  COMPLETED
+  IN_PROGRESS
+  FAILED
+}
+
+# ─── Core Sheet Types ─────────────────────────────────────────────────────────
+
+"""A Smartsheet sheet — the primary grid object combining rows, columns, and cells."""
+type Sheet {
+  id: ID!
+  name: String!
+  version: Int
+  totalRowCount: Int
+  accessLevel: AccessLevel
+  effectiveAttachmentOptions: [String]
+  ganttEnabled: Boolean
+  dependenciesEnabled: Boolean
+  resourceManagementEnabled: Boolean
+  cellImageUploadEnabled: Boolean
+  userSettings: JSON
+  permalink: String
+  createdAt: DateTime
+  modifiedAt: DateTime
+  isMultiPicklistEnabled: Boolean
+  columns: [SheetColumn!]
+  rows: [SheetRow!]
+  attachments: [Attachment!]
+  discussions: [Discussion!]
+  automations: [Automation!]
+  crossSheetReferences: [CrossSheetReference!]
+  shares: [Share!]
+  filters: [RowFilter!]
+  alerts: [Alert!]
+  forms: [Form!]
+  workspace: Workspace
+  owner: User
+  ownerEmail: String
+  readOnly: Boolean
+  source: JSON
+}
+
+"""A column definition within a Smartsheet sheet."""
+type SheetColumn {
+  id: ID!
+  index: Int!
+  title: String!
+  type: ColumnType!
+  primary: Boolean
+  hidden: Boolean
+  locked: Boolean
+  lockedForUser: Boolean
+  width: Int
+  format: String
+  symbol: String
+  systemColumnType: String
+  autoNumberFormat: JSON
+  options: [String]
+  contactOptions: [Contact]
+  formula: String
+  validation: Boolean
+  sheet: Sheet
+}
+
+"""A row within a Smartsheet sheet."""
+type SheetRow {
+  id: ID!
+  sheetId: ID!
+  rowNumber: Int!
+  parentId: ID
+  siblingId: ID
+  expanded: Boolean
+  accessLevel: AccessLevel
+  version: Int
+  format: String
+  locked: Boolean
+  lockedForUser: Boolean
+  inCriticalPath: Boolean
+  filteredOut: Boolean
+  permalink: String
+  conditionalFormat: String
+  createdAt: DateTime
+  modifiedAt: DateTime
+  cells: [Cell!]
+  attachments: [Attachment!]
+  discussions: [Discussion!]
+  columns: [SheetColumn!]
+}
+
+"""A single cell at the intersection of a row and column."""
+type Cell {
+  columnId: ID!
+  rowId: ID
+  value: JSON
+  displayValue: String
+  objectValue: JSON
+  formula: String
+  format: String
+  strict: Boolean
+  overrideValidation: Boolean
+  conditionalFormat: String
+  hyperlink: JSON
+  image: JSON
+  linksOutToCells: [CellLink]
+  linkInFromCell: CellLink
+  columnType: ColumnType
+}
+
+"""A link from one cell to another cell, within or across sheets."""
+type CellLink {
+  sheetId: ID!
+  sheetName: String
+  rowId: ID!
+  columnId: ID!
+  value: JSON
+  displayValue: String
+  status: String
+}
+
+"""A reference that enables cross-sheet formulas to use data from another sheet."""
+type CrossSheetReference {
+  id: ID!
+  name: String!
+  sourceSheetId: ID!
+  sourceSheetName: String
+  startRowId: ID
+  endRowId: ID
+  startColumnId: ID
+  endColumnId: ID
+  status: String
+}
+
+"""A formula definition stored on a column or cell."""
+type Formula {
+  id: ID!
+  formula: String!
+  columnId: ID
+  sheetId: ID
+}
+
+# ─── Content and Files ────────────────────────────────────────────────────────
+
+"""A file or URL attached to a sheet, row, or comment."""
+type Attachment {
+  id: ID!
+  name: String!
+  url: String
+  urlExpiresInMillis: Int
+  attachmentType: AttachmentType!
+  mimeType: String
+  sizeInKb: Int
+  parentId: ID!
+  parentType: String
+  createdAt: DateTime
+  createdBy: User
+}
+
+"""A threaded discussion on a sheet or row."""
+type Discussion {
+  id: ID!
+  title: String
+  accessLevel: AccessLevel
+  commentCount: Int
+  createdBy: User
+  createdAt: DateTime
+  lastCommentedAt: DateTime
+  lastCommentedUser: User
+  parentId: ID
+  parentType: String
+  comments: [Comment!]
+  attachments: [Attachment!]
+}
+
+"""A single comment within a discussion thread."""
+type Comment {
+  id: ID!
+  text: String!
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  discussionId: ID
+  attachments: [Attachment!]
+}
+
+# ─── Organization ─────────────────────────────────────────────────────────────
+
+"""A folder that organizes sheets, reports, templates, and dashboards."""
+type Folder {
+  id: ID!
+  name: String!
+  permalink: String
+  favorite: Boolean
+  sheets: [Sheet!]
+  folders: [Folder!]
+  reports: [Report!]
+  templates: [Template!]
+  dashboards: [Dashboard!]
+}
+
+"""A workspace — a shared container for organizing team resources."""
+type Workspace {
+  id: ID!
+  name: String!
+  accessLevel: AccessLevel
+  permalink: String
+  favorite: Boolean
+  sheets: [Sheet!]
+  folders: [Folder!]
+  reports: [Report!]
+  templates: [Template!]
+  dashboards: [Dashboard!]
+  shares: [Share!]
+}
+
+# ─── Reporting ────────────────────────────────────────────────────────────────
+
+"""A report that aggregates rows from multiple sheets based on criteria."""
+type Report {
+  id: ID!
+  name: String!
+  accessLevel: AccessLevel
+  permalink: String
+  createdAt: DateTime
+  modifiedAt: DateTime
+  ganttEnabled: Boolean
+  dependenciesEnabled: Boolean
+  columns: [ReportColumn!]
+  rows: [ReportRow!]
+  sourceSheets: [Sheet!]
+  shares: [Share!]
+}
+
+"""A row in a report, sourced from one of the report's source sheets."""
+type ReportRow {
+  id: ID!
+  sheetId: ID!
+  rowNumber: Int
+  format: String
+  expanded: Boolean
+  accessLevel: AccessLevel
+  createdAt: DateTime
+  modifiedAt: DateTime
+  cells: [Cell!]
+  sheet: Sheet
+}
+
+"""A column definition as it appears in a report view."""
+type ReportColumn {
+  id: ID!
+  index: Int!
+  title: String!
+  type: ColumnType
+  primary: Boolean
+  hidden: Boolean
+  virtualId: ID
+  sheetNameColumn: Boolean
+}
+
+# ─── Templates and Dashboards ─────────────────────────────────────────────────
+
+"""A reusable sheet or dashboard template."""
+type Template {
+  id: ID!
+  name: String!
+  description: String
+  accessLevel: AccessLevel
+  image: String
+  largeImage: String
+  locale: String
+  type: ObjectType
+  tags: [String]
+  categories: [String]
+  blank: Boolean
+  globalTemplate: Boolean
+}
+
+"""A Smartsheet dashboard (Sight) composed of widgets."""
+type Dashboard {
+  id: ID!
+  name: String!
+  accessLevel: AccessLevel
+  permalink: String
+  favorite: Boolean
+  createdAt: DateTime
+  modifiedAt: DateTime
+  backgroundColor: String
+  columnCount: Int
+  widgets: [Widget!]
+  shares: [Share!]
+}
+
+"""A widget placed on a dashboard."""
+type Widget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  titleFormat: String
+  showTitle: Boolean
+  showTitleIcon: Boolean
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  version: Int
+  contents: JSON
+}
+
+"""A chart widget on a dashboard."""
+type ChartWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  reportId: ID
+  sheetId: ID
+  axes: JSON
+  legend: JSON
+  series: JSON
+}
+
+"""A grid/Gantt widget showing a sheet or report inline on a dashboard."""
+type GridWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  sheetId: ID
+  reportId: ID
+  columnIds: [ID]
+  numberOfRows: Int
+  showGantt: Boolean
+}
+
+"""A shortcut widget displaying a set of clickable links on a dashboard."""
+type ShortcutWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  shortcutData: [JSON]
+}
+
+"""A metric widget displaying a single cell value from a sheet."""
+type MetricWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  sheetId: ID
+  columnId: ID
+  rowId: ID
+  cellFormat: String
+  labelFormat: String
+  label: String
+  valueFormat: String
+}
+
+"""An image widget displaying a static image on a dashboard."""
+type ImageWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  imageUrl: String
+  fileName: String
+  privateId: String
+  hyperlink: JSON
+  format: String
+}
+
+"""A rich-text (HTML) widget on a dashboard."""
+type RichTextWidget {
+  id: ID!
+  type: WidgetType!
+  title: String
+  xPosition: Int
+  yPosition: Int
+  width: Int
+  height: Int
+  html: String
+}
+
+# ─── Forms ────────────────────────────────────────────────────────────────────
+
+"""A data-entry form linked to a sheet."""
+type Form {
+  id: ID!
+  name: String!
+  sheetId: ID!
+  permalink: String
+  disabled: Boolean
+  description: String
+  title: String
+  submitMessage: String
+  submitAction: String
+  emailNotification: Boolean
+  fields: [FormField!]
+}
+
+"""A single field within a Smartsheet form."""
+type FormField {
+  id: ID!
+  columnId: ID!
+  fieldType: FormFieldType!
+  label: String
+  hint: String
+  required: Boolean
+  hidden: Boolean
+  order: Int
+  options: [String]
+  validationMessage: String
+}
+
+# ─── Filtering and Rules ──────────────────────────────────────────────────────
+
+"""A saved row filter applied to a sheet view."""
+type RowFilter {
+  id: ID!
+  name: String
+  sheetId: ID
+  filterType: String
+  query: JSON
+  version: Int
+  currentUserIncluded: Boolean
+}
+
+"""An alert (notification rule) that fires when sheet data meets conditions."""
+type Alert {
+  id: ID!
+  name: String
+  sheetId: ID
+  action: AutomationAction
+  condition: Condition
+  enabled: Boolean
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+"""An automation rule that triggers actions based on events or schedules."""
+type Automation {
+  id: ID!
+  name: String!
+  sheetId: ID
+  enabled: Boolean
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  userCanModify: Boolean
+  action: AutomationAction
+  condition: Condition
+}
+
+"""The action executed by an automation rule or alert."""
+type AutomationAction {
+  type: AutomationActionType!
+  recipients: [Recipient]
+  message: String
+  subject: String
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+  notifyAllSharedUsers: Boolean
+  frequency: String
+  timezone: String
+}
+
+"""A recipient for notifications or update requests."""
+type Recipient {
+  email: String
+  groupId: ID
+}
+
+"""A trigger rule that determines when an automation fires."""
+type Rule {
+  id: ID!
+  name: String
+  sheetId: ID
+  triggerEvent: String
+  schedule: JSON
+  condition: Condition
+  action: AutomationAction
+  enabled: Boolean
+}
+
+"""A condition expression used in filters, alerts, and automations."""
+type Condition {
+  operator: AlertOperator
+  columnId: ID
+  values: [JSON]
+  dateContextType: String
+}
+
+# ─── Requests and Updates ─────────────────────────────────────────────────────
+
+"""An outbound request (e.g. update request) sent to external recipients."""
+type Request {
+  id: ID!
+  sheetId: ID
+  sentAt: DateTime
+  sentTo: [Recipient]
+  subject: String
+  message: String
+  columnIds: [ID]
+  rowIds: [ID]
+  ccMe: Boolean
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+}
+
+"""The result of a sent update request or row email."""
+type SentResult {
+  id: ID!
+  type: String
+  status: String
+  sentAt: DateTime
+  sentBy: User
+  to: [Recipient]
+  subject: String
+  message: String
+  rowIds: [ID]
+  columnIds: [ID]
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+}
+
+"""A backup record of a sheet at a point in time."""
+type Backup {
+  id: ID!
+  sheetId: ID
+  status: BackupStatus
+  s3DownloadUrl: String
+  downloadLinkExpiry: DateTime
+  dayInUtc: String
+}
+
+"""A pending or scheduled update to sheet data."""
+type Update {
+  id: ID!
+  sheetId: ID
+  type: String
+  status: String
+  message: String
+  sentAt: DateTime
+  expiresAt: DateTime
+  rowIds: [ID]
+  columnIds: [ID]
+  sentBy: User
+}
+
+"""A request sent to a collaborator to update specific rows."""
+type UpdateRequest {
+  id: ID!
+  sheetId: ID
+  sentAt: DateTime
+  sentBy: User
+  subject: String
+  message: String
+  ccMe: Boolean
+  rowIds: [ID]
+  columnIds: [ID]
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+  schedule: JSON
+}
+
+"""A response submitted by a recipient of an update request."""
+type UpdateResponse {
+  id: ID!
+  updateRequestId: ID
+  sheetId: ID
+  submittedAt: DateTime
+  submittedBy: User
+  rowId: ID
+  cells: [Cell!]
+}
+
+# ─── Users and Access ─────────────────────────────────────────────────────────
+
+"""A Smartsheet user account."""
+type User {
+  id: ID!
+  email: String!
+  firstName: String
+  lastName: String
+  name: String
+  admin: Boolean
+  licensedSheetCreator: Boolean
+  resourceViewer: Boolean
+  groupAdmin: Boolean
+  profileImage: JSON
+  locale: String
+  timeZone: String
+  customWelcomeScreenViewed: DateTime
+  status: String
+  createdAt: DateTime
+  modifiedAt: DateTime
+  groups: [Group!]
+  shares: [Share!]
+}
+
+"""A named group of Smartsheet users."""
+type Group {
+  id: ID!
+  name: String!
+  description: String
+  owner: String
+  ownerId: ID
+  createdAt: DateTime
+  modifiedAt: DateTime
+  members: [GroupMember!]
+}
+
+"""A member entry linking a user to a group."""
+type GroupMember {
+  id: ID!
+  email: String!
+  name: String
+  firstName: String
+  lastName: String
+}
+
+"""An organization (account) that owns Smartsheet subscriptions and users."""
+type Organization {
+  id: ID!
+  name: String
+  accountType: String
+  locale: String
+  numSheets: Int
+  numUsers: Int
+  quotaDetails: JSON
+}
+
+"""A share record granting a user or group access to a sheet, workspace, or dashboard."""
+type Share {
+  id: ID!
+  type: ShareType
+  email: String
+  name: String
+  groupId: ID
+  userId: ID
+  accessLevel: AccessLevel!
+  subject: String
+  message: String
+  ccMe: Boolean
+  scope: String
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+"""A contact from the Smartsheet contacts directory."""
+type Contact {
+  id: ID!
+  name: String
+  email: String!
+}
+
+# ─── Events and Notifications ─────────────────────────────────────────────────
+
+"""An audit event recorded in the Smartsheet event log."""
+type Event {
+  id: ID!
+  objectType: EventObjectType
+  action: EventAction
+  objectId: ID
+  userId: ID
+  requestUserId: ID
+  timestamp: DateTime
+  source: String
+  additionalDetails: JSON
+}
+
+"""A suggested automation identified by Smartsheet for a sheet."""
+type PotentialAutomation {
+  id: ID!
+  sheetId: ID
+  type: String
+  description: String
+  actionType: AutomationActionType
+}
+
+"""An email sent to a set of row-level recipients."""
+type RowEmail {
+  id: ID!
+  sheetId: ID
+  rowIds: [ID!]!
+  columnIds: [ID]
+  to: [Recipient!]!
+  subject: String
+  message: String
+  ccMe: Boolean
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+  sendSchedule: JSON
+}
+
+"""A record of an outbound send operation (notification, update request, etc.)."""
+type Send {
+  id: ID!
+  sheetId: ID
+  type: String
+  status: String
+  sentAt: DateTime
+  sentBy: User
+  recipients: [Recipient]
+  subject: String
+  message: String
+}
+
+# ─── System Types ─────────────────────────────────────────────────────────────
+
+"""The API version information returned by the Smartsheet versioning endpoint."""
+type Version {
+  major: Int
+  minor: Int
+  micro: Int
+  serverVersion: String
+}
+
+"""Arbitrary metadata attached to any Smartsheet object."""
+type Metadata {
+  key: String!
+  value: JSON
+  objectId: ID
+  objectType: ObjectType
+}
+
+"""A lightweight probe/health-check type for confirming API connectivity."""
+type Probe {
+  status: String!
+  timestamp: DateTime
+  apiVersion: String
+}
+
+# ─── Pagination ───────────────────────────────────────────────────────────────
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+  totalCount: Int
+}
+
+type SheetConnection {
+  edges: [SheetEdge!]
+  pageInfo: PageInfo!
+}
+
+type SheetEdge {
+  node: Sheet!
+  cursor: String!
+}
+
+# ─── Input Types ─────────────────────────────────────────────────────────────
+
+input RowInput {
+  parentId: ID
+  siblingId: ID
+  toTop: Boolean
+  toBottom: Boolean
+  above: Boolean
+  indent: Int
+  outdent: Int
+  expanded: Boolean
+  locked: Boolean
+  format: String
+  cells: [CellInput!]
+}
+
+input CellInput {
+  columnId: ID!
+  value: JSON
+  formula: String
+  strict: Boolean
+  format: String
+  overrideValidation: Boolean
+  hyperlink: JSON
+}
+
+input ShareInput {
+  email: String
+  groupId: ID
+  accessLevel: AccessLevel!
+  subject: String
+  message: String
+  ccMe: Boolean
+}
+
+input AutomationInput {
+  name: String!
+  enabled: Boolean
+  action: AutomationActionInput!
+}
+
+input AutomationActionInput {
+  type: AutomationActionType!
+  recipients: [RecipientInput]
+  message: String
+  subject: String
+  includeAttachments: Boolean
+  includeDiscussions: Boolean
+  notifyAllSharedUsers: Boolean
+}
+
+input RecipientInput {
+  email: String
+  groupId: ID
+}
+
+# ─── Root Types ───────────────────────────────────────────────────────────────
+
+type Query {
+  """Fetch a sheet by ID."""
+  sheet(id: ID!): Sheet
+
+  """List all sheets accessible to the current user."""
+  sheets(pageSize: Int, cursor: String): SheetConnection
+
+  """Fetch a workspace by ID."""
+  workspace(id: ID!): Workspace
+
+  """List all workspaces accessible to the current user."""
+  workspaces: [Workspace!]
+
+  """Fetch a folder by ID."""
+  folder(id: ID!): Folder
+
+  """Fetch a report by ID."""
+  report(id: ID!): Report
+
+  """List all reports accessible to the current user."""
+  reports: [Report!]
+
+  """Fetch a dashboard (Sight) by ID."""
+  dashboard(id: ID!): Dashboard
+
+  """List all dashboards accessible to the current user."""
+  dashboards: [Dashboard!]
+
+  """Fetch a template by ID."""
+  template(id: ID!): Template
+
+  """List public and account templates."""
+  templates: [Template!]
+
+  """Fetch a form by ID."""
+  form(id: ID!): Form
+
+  """Fetch the currently authenticated user."""
+  currentUser: User
+
+  """Fetch a user by ID."""
+  user(id: ID!): User
+
+  """List all users in the organization."""
+  users: [User!]
+
+  """Fetch a group by ID."""
+  group(id: ID!): Group
+
+  """List all groups in the organization."""
+  groups: [Group!]
+
+  """Fetch a contact by ID."""
+  contact(id: ID!): Contact
+
+  """List contacts for the current user."""
+  contacts: [Contact!]
+
+  """List recent events from the event log."""
+  events(since: DateTime, maxCount: Int): [Event!]
+
+  """Fetch the API version information."""
+  version: Version
+
+  """Probe the API for connectivity."""
+  probe: Probe
+}
+
+type Mutation {
+  """Add a row to a sheet."""
+  addRow(sheetId: ID!, input: RowInput!): SheetRow
+
+  """Update an existing row."""
+  updateRow(sheetId: ID!, rowId: ID!, input: RowInput!): SheetRow
+
+  """Delete a row from a sheet."""
+  deleteRow(sheetId: ID!, rowId: ID!): Boolean
+
+  """Share a sheet with a user or group."""
+  shareSheet(sheetId: ID!, input: ShareInput!): Share
+
+  """Share a workspace with a user or group."""
+  shareWorkspace(workspaceId: ID!, input: ShareInput!): Share
+
+  """Create an automation rule on a sheet."""
+  createAutomation(sheetId: ID!, input: AutomationInput!): Automation
+
+  """Enable or disable an automation rule."""
+  updateAutomation(sheetId: ID!, automationId: ID!, enabled: Boolean!): Automation
+
+  """Delete an automation rule."""
+  deleteAutomation(sheetId: ID!, automationId: ID!): Boolean
+
+  """Send an update request to recipients for specific rows."""
+  sendUpdateRequest(sheetId: ID!, input: RowInput!): UpdateRequest
+
+  """Send a row via email."""
+  sendRowEmail(sheetId: ID!, input: RowInput!): RowEmail
+}
