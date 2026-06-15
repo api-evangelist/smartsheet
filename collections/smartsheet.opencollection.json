@@ -1,0 +1,217 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Smartsheet API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sheets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets"
+          },
+          "docs": "Retrieve a list of sheets the user has access to."
+        },
+        {
+          "info": {
+            "name": "Create sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.smartsheet.com/2.0/sheets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new sheet in the user's \"Sheets\" folder."
+        },
+        {
+          "info": {
+            "name": "Get sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the specified sheet, including its rows, columns, and cells."
+        },
+        {
+          "info": {
+            "name": "Delete sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete the specified sheet."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/rows",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Insert one or more rows into the specified sheet."
+        },
+        {
+          "info": {
+            "name": "Update rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/rows",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more rows in the specified sheet."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Columns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List columns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/columns",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List the columns of the specified sheet."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/reports"
+          },
+          "docs": "List all reports the user has access to."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Webhooks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/webhooks"
+          },
+          "docs": "List the webhooks the user owns."
+        },
+        {
+          "info": {
+            "name": "Create webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.smartsheet.com/2.0/webhooks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new webhook subscription."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
