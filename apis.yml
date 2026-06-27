@@ -51,15 +51,15 @@ common:
   url: https://www.smartsheet.com
 - type: Documentation
   url: https://developers.smartsheet.com/
-- type: Developer Portal
+- type: DeveloperPortal
   url: https://developers.smartsheet.com/
-- type: SignUp
+- type: Signup
   url: https://www.smartsheet.com/try-it
 - type: Pricing
   url: https://www.smartsheet.com/pricing
 - type: GitHubOrganization
   url: https://github.com/smartsheet-platform
-- type: LLMsTxt
+- type: LlmsText
   url: https://developers.smartsheet.com/llms.txt
 maintainers:
 - FN: Kin Lane
