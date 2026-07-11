@@ -1,0 +1,31 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.smartsheet.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 30 18:50:19 2026 GMT
+  hsts: true
+  hsts_max_age: 31557600
+- host: developers.smartsheet.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 11 11:15:38 2026 GMT
+  hsts: false
+- host: api.smartsheet.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Nov  6 23:59:59 2026 GMT
+  hsts: null
+domains:
+- domain: smartsheet.com
+  dnssec: false
+  caa:
+  - 0 issue "digicert.com"
+  - 0 issue "letsencrypt.org"
+  - 0 iodef "mailto:security@smartsheet.com"
+  - 0 issue "amazon.com"
+  spf: true
+  dmarc: true
+  dmarc_policy: reject

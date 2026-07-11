@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/smartsheet-openapi.yml
+summary:
+  types:
+  - http
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+schemes:
+- name: ApiToken
+  type: http
+  scheme: bearer
+  description: Smartsheet API access token sent in the Authorization header as a Bearer token.
+  sources:
+  - openapi/smartsheet-openapi.yml
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.smartsheet.com/b/authorize
+    tokenUrl: https://api.smartsheet.com/2.0/token
+    scopes: 10
+  description: Smartsheet OAuth 2.0 authorization.
+  sources:
+  - openapi/smartsheet-openapi.yml

@@ -45,6 +45,12 @@ apis:
   - url: graphql/smartsheet-graphql.md
     type: GraphQL
 common:
+- type: TrustCenter
+  url: security/smartsheet-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/smartsheet-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/smartsheet-domain-security.yml
 - type: Authentication
   url: authentication/smartsheet-authentication.yml
 - type: OAuthScopes

@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://www.smartsheet.com/trust
+url: https://www.smartsheet.com/trust
+certifications:
+- HIPAA
+- FedRAMP
+evidence:
+- source: https://www.smartsheet.com/trust
+  keywords:
+  - hipaa
+  - fedramp
+  - trust center
