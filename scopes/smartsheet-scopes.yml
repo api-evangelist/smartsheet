@@ -1,0 +1,72 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/smartsheet-openapi.yml
+schemes:
+- name: OAuth2
+  source: openapi/smartsheet-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://app.smartsheet.com/b/authorize
+    tokenUrl: https://api.smartsheet.com/2.0/token
+  description: Smartsheet OAuth 2.0 authorization.
+scopes:
+- scope: ADMIN_SHEETS
+  description: Sheet admin
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: ADMIN_USERS
+  description: User admin
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: ADMIN_WEBHOOKS
+  description: Webhook admin
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: ADMIN_WORKSPACES
+  description: Workspace admin
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: DELETE_SHEETS
+  description: Delete sheets
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: READ_CONTACTS
+  description: View contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: READ_SHEETS
+  description: View sheets
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: READ_USERS
+  description: View users
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: SHARE_SHEETS
+  description: Share sheets
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
+- scope: WRITE_SHEETS
+  description: Edit sheets
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/smartsheet-openapi.yml
