@@ -45,6 +45,8 @@ apis:
   - url: graphql/smartsheet-graphql.md
     type: GraphQL
 common:
+- type: AgenticAccess
+  url: agentic-access/smartsheet-agentic-access.yml
 - type: TrustCenter
   url: security/smartsheet-trust-center.yml
 - type: VulnerabilityDisclosure
