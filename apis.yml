@@ -6,7 +6,19 @@ description: Smartsheet is a SaaS work management and collaboration platform tha
   programmatic access to sheets, rows, columns, reports, workspaces, users, attachments,
   and webhooks using OAuth 2.0 or API access tokens.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/smartsheet.png
 tags:
 - Work Management
 - Project Management
@@ -21,9 +33,10 @@ specificationVersion: '0.19'
 apis:
 - aid: smartsheet:rest-api
   name: Smartsheet REST API
-  description: REST API v2.0 for managing sheets, rows, columns, cells, reports, workspaces,
-    folders, users, groups, attachments, discussions, automation rules, and webhooks.
-    Authentication uses OAuth 2.0 or Bearer access tokens.
+  description: >-
+    REST API v2.0 for managing sheets, rows, columns, cells, reports, workspaces, folders, users, groups,
+    attachments, discussions, automation rules, and webhooks. Authentication uses OAuth 2.0 or Bearer
+    access tokens.
   humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
   baseURL: https://api.smartsheet.com/2.0
   tags:
@@ -44,6 +57,56 @@ apis:
     url: https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication
   - url: graphql/smartsheet-graphql.md
     type: GraphQL
+- aid: smartsheet:smartsheet-columns-api
+  name: Smartsheet Columns API
+  description: Manage columns within sheets.
+  humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
+  baseURL: https://api.smartsheet.com/2.0
+  tags:
+  - Columns
+  properties:
+  - type: OpenAPI
+    url: openapi/smartsheet-columns-api-openapi.yml
+- aid: smartsheet:smartsheet-reports-api
+  name: Smartsheet Reports API
+  description: Retrieve report data.
+  humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
+  baseURL: https://api.smartsheet.com/2.0
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/smartsheet-reports-api-openapi.yml
+- aid: smartsheet:smartsheet-rows-api
+  name: Smartsheet Rows API
+  description: Manage rows within sheets.
+  humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
+  baseURL: https://api.smartsheet.com/2.0
+  tags:
+  - Rows
+  properties:
+  - type: OpenAPI
+    url: openapi/smartsheet-rows-api-openapi.yml
+- aid: smartsheet:smartsheet-sheets-api
+  name: Smartsheet Sheets API
+  description: Manage Smartsheet sheets.
+  humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
+  baseURL: https://api.smartsheet.com/2.0
+  tags:
+  - Sheets
+  properties:
+  - type: OpenAPI
+    url: openapi/smartsheet-sheets-api-openapi.yml
+- aid: smartsheet:smartsheet-webhooks-api
+  name: Smartsheet Webhooks API
+  description: Manage webhook subscriptions.
+  humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
+  baseURL: https://api.smartsheet.com/2.0
+  tags:
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/smartsheet-webhooks-api-openapi.yml
 common:
 - type: AgenticAccess
   url: agentic-access/smartsheet-agentic-access.yml
