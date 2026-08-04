@@ -1,0 +1,22 @@
+{
+  "provider": "smartsheet",
+  "sources": [
+    "smartsheet-columns-api-openapi.yml",
+    "smartsheet-reports-api-openapi.yml",
+    "smartsheet-rows-api-openapi.yml",
+    "smartsheet-sheets-api-openapi.yml",
+    "smartsheet-webhooks-api-openapi.yml"
+  ],
+  "outputs": [
+    "smartsheet-columns-api-openapi.yml",
+    "smartsheet-reports-api-openapi.yml",
+    "smartsheet-rows-api-openapi.yml",
+    "smartsheet-sheets-api-openapi.yml",
+    "smartsheet-webhooks-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
