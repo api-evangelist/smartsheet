@@ -1,0 +1,42 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Smartsheet Columns API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Columns",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List columns",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/columns",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List the columns of the specified sheet."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

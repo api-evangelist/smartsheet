@@ -1,0 +1,68 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Smartsheet Columns Rows API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Rows",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Add rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/rows",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Insert one or more rows into the specified sheet."
+        },
+        {
+          "info": {
+            "name": "Update rows",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId/rows",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update one or more rows in the specified sheet."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

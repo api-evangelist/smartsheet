@@ -1,0 +1,139 @@
+{
+  "item": [
+    {
+      "id": "acd84aa0-7e05-437a-b21b-17505345ab37",
+      "name": "Columns",
+      "description": {
+        "content": "Manage columns within sheets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42e2ca7b-ea4f-4546-a87e-0153f3b8c649",
+          "name": "List columns",
+          "request": {
+            "name": "List columns",
+            "description": {
+              "content": "List the columns of the specified sheet.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "sheets",
+                ":sheetId",
+                "columns"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<long>",
+                  "key": "sheetId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "84267aa8-ffab-4fd8-8fa9-d184bf4db5f2",
+              "name": "A list of columns.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "sheets",
+                    ":sheetId",
+                    "columns"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<long>",
+                      "key": "sheetId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.smartsheet.com/2.0",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "7ea987f5-090b-4677-9148-cc55710f2c37",
+    "name": "Smartsheet Columns API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Smartsheet is a SaaS work management and collaboration platform. The Smartsheet REST API v2.0 provides programmatic access to sheets, rows, columns, reports, workspaces, users, attachments, and webhooks. Authentication uses OAuth 2.0 or Bearer API access tokens.\n\nContact Support:\n Name: Smartsheet API",
+      "type": "text/plain"
+    }
+  }
+}

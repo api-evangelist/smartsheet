@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Smartsheet Columns Sheets API",
+    "version": "2.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Sheets",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List sheets",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets"
+          },
+          "docs": "Retrieve a list of sheets the user has access to."
+        },
+        {
+          "info": {
+            "name": "Create sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.smartsheet.com/2.0/sheets",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new sheet in the user's \"Sheets\" folder."
+        },
+        {
+          "info": {
+            "name": "Get sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve the specified sheet, including its rows, columns, and cells."
+        },
+        {
+          "info": {
+            "name": "Delete sheet",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.smartsheet.com/2.0/sheets/:sheetId",
+            "params": [
+              {
+                "name": "sheetId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete the specified sheet."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
