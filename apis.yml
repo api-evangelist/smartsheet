@@ -24,6 +24,13 @@ tags:
 - Project Management
 - Collaboration
 - Productivity
+- Workflow-Automation
+- Spreadsheets
+tags_raw:
+- Work Management
+- Project Management
+- Collaboration
+- Productivity
 - Workflow Automation
 - Spreadsheets
 url: https://raw.githubusercontent.com/api-evangelist/smartsheet/refs/heads/main/apis.yml
@@ -40,6 +47,13 @@ apis:
   humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
   baseURL: https://api.smartsheet.com/2.0
   tags:
+  - Sheets
+  - Rows
+  - Reports
+  - Workspaces
+  - User
+  - Webhook
+  tags_raw:
   - Sheets
   - Rows
   - Reports
@@ -103,6 +117,8 @@ apis:
   humanURL: https://developers.smartsheet.com/api/smartsheet/openapi
   baseURL: https://api.smartsheet.com/2.0
   tags:
+  - Webhook
+  tags_raw:
   - Webhooks
   properties:
   - type: OpenAPI
