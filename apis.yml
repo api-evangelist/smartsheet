@@ -6,6 +6,18 @@ description: Smartsheet is a SaaS work management and collaboration platform tha
   programmatic access to sheets, rows, columns, reports, workspaces, users, attachments,
   and webhooks using OAuth 2.0 or API access tokens.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
