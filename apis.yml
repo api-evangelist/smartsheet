@@ -62,7 +62,7 @@ apis:
   - Sheets
   - Rows
   - Reports
-  - Workspaces
+  - Workspace
   - User
   - Webhook
   tags_raw:
