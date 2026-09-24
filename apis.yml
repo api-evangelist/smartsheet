@@ -36,7 +36,7 @@ tags:
 - Project Management
 - Collaboration
 - Productivity
-- Workflow-Automation
+- Workflow Automation
 - Spreadsheets
 tags_raw:
 - Work Management
@@ -45,6 +45,7 @@ tags_raw:
 - Productivity
 - Workflow Automation
 - Spreadsheets
+- Workflow-Automation
 url: https://raw.githubusercontent.com/api-evangelist/smartsheet/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-05-11'
@@ -81,8 +82,6 @@ apis:
     url: https://developers.smartsheet.com/api/smartsheet/introduction
   - type: Authentication
     url: https://developers.smartsheet.com/api/smartsheet/guides/basics/authentication
-  - url: graphql/smartsheet-graphql.md
-    type: GraphQL
 - aid: smartsheet:smartsheet-columns-api
   name: Smartsheet Columns API
   description: Manage columns within sheets.
