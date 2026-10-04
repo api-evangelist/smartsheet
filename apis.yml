@@ -135,6 +135,9 @@ apis:
   - type: OpenAPI
     url: openapi/smartsheet-webhooks-api-openapi.yml
 common:
+- type: CapabilityMap
+  url: capabilities/smartsheet-capability-edges.yml
+  name: Smartsheet Business Capability Map
 - type: AgenticAccess
   url: agentic-access/smartsheet-agentic-access.yml
 - type: TrustCenter
