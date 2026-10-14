@@ -15,3 +15,29 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
+- slug: smartsheet-docusign-partner-store
+  label: Docusign (partner-store)
+  partner: docusign
+  partner_name: Docusign (partner-store)
+  category: Integrations
+  type: marketplace
+  marketplace: partner-store
+  channel: partner-built
+  evidence: https://www.smartsheet.com/Docusign
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/smartsheet_v2/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
