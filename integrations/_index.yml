@@ -156,7 +156,7 @@
     - connectors/applications/smartsheet
     vendor_link: https://www.smartsheet.com/platform/resource-management
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: smartsheet-meltano
   label: Meltano
@@ -185,7 +185,7 @@
     quality:
     - bronze
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: smartsheet-google-workspace-own
   label: Google Workspace (own)
