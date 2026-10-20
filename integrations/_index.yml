@@ -15,122 +15,6 @@
   relationship: connector-coverage
   status: not-a-workflow
   arazzo: null
-- slug: smartsheet-docusign-partner-store
-  label: Docusign (partner-store)
-  partner: docusign
-  partner_name: Docusign (partner-store)
-  category: Integrations
-  type: marketplace
-  marketplace: partner-store
-  channel: partner-built
-  evidence: https://www.smartsheet.com/Docusign
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/smartsheet_v2/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-zapier
-  label: Zapier
-  partner: zapier
-  partner_name: Zapier
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  evidence: https://zapier.com/apps/smartsheet/integrations
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    beta: false
-    builder: unknown (not in the directory record)
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-pipedream
-  label: Pipedream
-  partner: pipedream
-  partner_name: Pipedream
-  type: marketplace
-  marketplace: pipedream-components
-  channel: open-source-node
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/smartsheet
-  source: edge
-  relationship: ipaas-bridge
-  contract_reference:
-    register: Pipedream components (PipedreamHQ/pipedream components/)
-    spec_file: null
-    role: ipaas-connector:pipedream
-    registered_name: smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    actions: true
-    sources: true
-    builder: Pipedream repo (component)
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-fedramp
-  label: FedRAMP
-  partner_name: FedRAMP
-  category: FedRAMP authorization
-  type: contract
-  channel: regulator-register
-  evidence: https://marketplace.fedramp.gov/products/FR1730866868
-  source: edge
-  relationship: standard-participant
-  contract_reference:
-    register: FedRAMP Marketplace data (github.com/18F/fedramp-data data/data.json @4b73d9247f)
-    standard: FedRAMP
-    spec_file: null
-    role: fedramp-authorized
-    registered_name: Smartsheet
-    register_id: FR1730866868
-    matched_domain: smartsheet.com
-    matched_by: domain
-    domain_source: website
-    designations:
-    - Compliant
-    packages:
-    - Smartsheet Gov
-    service_models:
-    - SaaS
-    paths:
-    - JAB
-    signal_note: certified_products = one entry per AUTHORIZED impact level, never per package; packages, service
-      models, paths and leveraging agencies are context, never counted. The register lists current designations
-      only (revoked / expired are removed), so lapsed is always false
-    detected_by: sweep-gov-cloud.py
-    detected: '2026-10-15'
-    certified_products:
-    - product: FedRAMP Moderate
-      impact_level: Moderate
-      lapsed: false
-      latest_authorization: '2019-08-12'
-  status: not-a-workflow
-  arazzo: null
 - slug: smartsheet-fivetran
   label: Fivetran
   partner: fivetran
@@ -187,6 +71,58 @@
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   status: not-a-workflow
   arazzo: null
+- slug: smartsheet-fedramp
+  label: FedRAMP
+  partner_name: FedRAMP
+  category: FedRAMP authorization
+  type: contract
+  channel: regulator-register
+  evidence: https://marketplace.fedramp.gov/products/FR1730866868
+  source: edge
+  relationship: standard-participant
+  contract_reference:
+    register: FedRAMP Marketplace data (github.com/18F/fedramp-data data/data.json @4b73d9247f)
+    standard: FedRAMP
+    spec_file: null
+    role: fedramp-authorized
+    registered_name: Smartsheet
+    register_id: FR1730866868
+    matched_domain: smartsheet.com
+    matched_by: domain
+    domain_source: website
+    designations:
+    - Compliant
+    packages:
+    - Smartsheet Gov
+    service_models:
+    - SaaS
+    paths:
+    - JAB
+    signal_note: certified_products = one entry per AUTHORIZED impact level, never per package; packages, service
+      models, paths and leveraging agencies are context, never counted. The register lists current designations
+      only (revoked / expired are removed), so lapsed is always false
+    detected_by: sweep-gov-cloud.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: FedRAMP Moderate
+      impact_level: Moderate
+      lapsed: false
+      latest_authorization: '2019-08-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-docusign-partner-store
+  label: Docusign (partner-store)
+  partner: docusign
+  partner_name: Docusign (partner-store)
+  category: Integrations
+  type: marketplace
+  marketplace: partner-store
+  channel: partner-built
+  evidence: https://www.smartsheet.com/Docusign
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: smartsheet-google-workspace-own
   label: Google Workspace (own)
   partner: google-workspace
@@ -213,6 +149,31 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: smartsheet-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/smartsheet_v2/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-power-bi-own
+  label: Power BI (own)
+  partner: power-bi
+  partner_name: Power BI (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: smartsheet-slack-own
   label: Slack (own)
   partner: slack
@@ -224,5 +185,56 @@
   evidence: https://slack.com/marketplace/A05R4TD0JSZ-smartsheet-eu
   source: edge
   relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-zapier
+  label: Zapier
+  partner: zapier
+  partner_name: Zapier
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  evidence: https://zapier.com/apps/smartsheet/integrations
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    beta: false
+    builder: unknown (not in the directory record)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-pipedream
+  label: Pipedream
+  partner: pipedream
+  partner_name: Pipedream
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/smartsheet
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null

@@ -24,134 +24,6 @@ edges:
       - upsert
   detected_by: sweep-cdp.py
   first_seen: '2026-10-14'
-- partner_name: Docusign (partner-store)
-  partner: docusign
-  partner_match: mirror
-  mirror_match: domain+verified
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: partner-store
-  evidence: https://www.smartsheet.com/Docusign
-  mirror_of: docusign/integrations/docusign-integration-edges.yml
-  apps:
-  - eSignature for Smartsheet
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Integrations
-- partner_name: Okta (own)
-  partner: okta
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://www.okta.com/integrations/smartsheet_v2/
-  mirror_of: okta/integrations/okta-integration-edges.yml
-  apps:
-  - Smartsheet v2
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Single Sign-On
-  badges:
-  - OKTA_VERIFIED
-  features:
-  - SAML
-- partner_name: Zapier
-  partner: zapier
-  partner_match: aggregator
-  type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  relationship: ipaas-bridge
-  direction: third-party
-  evidence: https://zapier.com/apps/smartsheet/integrations
-  category: null
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    beta: false
-    builder: unknown (not in the directory record)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
-- partner_name: Pipedream
-  partner: pipedream
-  partner_match: aggregator
-  type: marketplace
-  marketplace: pipedream-components
-  channel: open-source-node
-  relationship: ipaas-bridge
-  direction: third-party
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/smartsheet
-  category: null
-  contract_reference:
-    register: Pipedream components (PipedreamHQ/pipedream components/)
-    spec_file: null
-    role: ipaas-connector:pipedream
-    registered_name: smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    actions: true
-    sources: true
-    builder: Pipedream repo (component)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
-- partner_name: FedRAMP
-  partner: null
-  partner_match: register
-  type: contract
-  channel: regulator-register
-  relationship: standard-participant
-  direction: partner-built
-  evidence: https://marketplace.fedramp.gov/products/FR1730866868
-  category: FedRAMP authorization
-  contract_reference:
-    register: FedRAMP Marketplace data (github.com/18F/fedramp-data data/data.json @4b73d9247f)
-    standard: FedRAMP
-    spec_file: null
-    role: fedramp-authorized
-    registered_name: Smartsheet
-    register_id: FR1730866868
-    matched_domain: smartsheet.com
-    matched_by: domain
-    domain_source: website
-    designations:
-    - Compliant
-    packages:
-    - Smartsheet Gov
-    service_models:
-    - SaaS
-    paths:
-    - JAB
-    signal_note: certified_products = one entry per AUTHORIZED impact level, never per package; packages, service
-      models, paths and leveraging agencies are context, never counted. The register lists current designations
-      only (revoked / expired are removed), so lapsed is always false
-    detected_by: sweep-gov-cloud.py
-    detected: '2026-10-15'
-    certified_products:
-    - product: FedRAMP Moderate
-      impact_level: Moderate
-      lapsed: false
-      latest_authorization: '2019-08-12'
-  detected_by: sweep-gov-cloud.py
-  first_seen: '2026-10-15'
 - partner_name: Fivetran
   partner: fivetran
   partner_match: aggregator
@@ -208,6 +80,62 @@ edges:
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: FedRAMP
+  partner: null
+  partner_match: register
+  type: contract
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://marketplace.fedramp.gov/products/FR1730866868
+  category: FedRAMP authorization
+  contract_reference:
+    register: FedRAMP Marketplace data (github.com/18F/fedramp-data data/data.json @4b73d9247f)
+    standard: FedRAMP
+    spec_file: null
+    role: fedramp-authorized
+    registered_name: Smartsheet
+    register_id: FR1730866868
+    matched_domain: smartsheet.com
+    matched_by: domain
+    domain_source: website
+    designations:
+    - Compliant
+    packages:
+    - Smartsheet Gov
+    service_models:
+    - SaaS
+    paths:
+    - JAB
+    signal_note: certified_products = one entry per AUTHORIZED impact level, never per package; packages, service
+      models, paths and leveraging agencies are context, never counted. The register lists current designations
+      only (revoked / expired are removed), so lapsed is always false
+    detected_by: sweep-gov-cloud.py
+    detected: '2026-10-15'
+    certified_products:
+    - product: FedRAMP Moderate
+      impact_level: Moderate
+      lapsed: false
+      latest_authorization: '2019-08-12'
+  detected_by: sweep-gov-cloud.py
+  first_seen: '2026-10-15'
+- partner_name: Docusign (partner-store)
+  partner: docusign
+  partner_match: mirror
+  mirror_match: domain+verified
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: partner-store
+  evidence: https://www.smartsheet.com/Docusign
+  mirror_of: docusign/integrations/docusign-integration-edges.yml
+  apps:
+  - eSignature for Smartsheet
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Integrations
 - partner_name: Google Workspace (own)
   partner: google-workspace
   partner_match: mirror
@@ -245,6 +173,43 @@ edges:
   publisher_verified:
   - Microsoft 365 Certified
   - Microsoft 365 Publisher Attestation
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/smartsheet_v2/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Smartsheet v2
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - SAML
+- partner_name: Power BI (own)
+  partner: power-bi
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
+  mirror_of: power-bi/integrations/power-bi-integration-edges.yml
+  apps:
+  - Smartsheet
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
 - partner_name: Slack (own)
   partner: slack
   partner_match: mirror
@@ -262,6 +227,57 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Slack app
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/smartsheet/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
+- partner_name: Pipedream
+  partner: pipedream
+  partner_match: aggregator
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/smartsheet
+  category: null
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
 method: searched
 checked:
 - docusign/integrations/docusign-integration-edges.yml
@@ -269,6 +285,7 @@ checked:
 - https://fivetran.com/docs-sitemap.xml
 - https://fivetran.com/docs/connectors/partner-built-program
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
+- https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/
 - https://github.com/meltano/hub
 - https://govramp.org/program-participants
 - https://hightouch.com/docs/destinations/smartsheet
@@ -277,5 +294,6 @@ checked:
 - https://zapier.com/api/v4/apps/
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 - okta/integrations/okta-integration-edges.yml
+- power-bi/integrations/power-bi-integration-edges.yml
 - slack/integrations/slack-integration-edges.yml
 source: https://hightouch.com/docs/destinations/smartsheet
