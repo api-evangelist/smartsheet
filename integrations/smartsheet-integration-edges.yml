@@ -358,6 +358,23 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: marketing
+- partner_name: Atlassian (own)
+  partner: atlassian
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.atlassian.com/vendors/1213385/smartsheet
+  mirror_of: atlassian/integrations/atlassian-integration-edges.yml
+  apps:
+  - Smartsheet Connector for Jira
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: Project management
 method: searched
 checked:
 - docusign/integrations/docusign-integration-edges.yml
@@ -384,4 +401,5 @@ checked:
 - https://slack.com/marketplace
 - salesforce-marketing-cloud/integrations/salesforce-marketing-cloud-integration-edges.yml
 - salesforce/integrations/salesforce-integration-edges.yml
+- atlassian/integrations/atlassian-integration-edges.yml
 source: https://hightouch.com/docs/destinations/smartsheet
