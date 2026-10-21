@@ -119,6 +119,103 @@ edges:
       latest_authorization: '2019-08-12'
   detected_by: sweep-gov-cloud.py
   first_seen: '2026-10-15'
+- partner_name: Zapier
+  partner: zapier
+  partner_match: aggregator
+  type: marketplace
+  marketplace: zapier-directory
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://zapier.com/apps/smartsheet/integrations
+  category: null
+  contract_reference:
+    register: Zapier app directory (zapier.com/api/v4/apps)
+    spec_file: null
+    role: ipaas-connector:zapier
+    registered_name: Smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    beta: false
+    builder: unknown (not in the directory record)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
+- partner_name: Pipedream
+  partner: pipedream
+  partner_match: aggregator
+  type: marketplace
+  marketplace: pipedream-components
+  channel: open-source-node
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/smartsheet
+  category: null
+  contract_reference:
+    register: Pipedream components (PipedreamHQ/pipedream components/)
+    spec_file: null
+    role: ipaas-connector:pipedream
+    registered_name: smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    detected_by: sweep-workflow-automation.py
+    detected: '2026-10-15'
+    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
+    app_slug: smartsheet
+    actions: true
+    sources: true
+    builder: Pipedream repo (component)
+  detected_by: sweep-workflow-automation.py
+  first_seen: '2026-10-15'
+- partner_name: Salesforce AppExchange Security Review
+  partner: salesforce
+  partner_match: register
+  type: register
+  channel: standard-directory
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/security_review_overview.htm
+  category: AppExchange security-reviewed publisher
+  contract_reference:
+    register: Salesforce AppExchange public listings (listing JSON) under the AgentExchange Security Review requirement
+    standard: Salesforce AppExchange Security Review
+    spec_file: null
+    role: security-reviewed-publisher
+    registered_name: Smartsheet
+    register_country: null
+    matched_domain: smartsheet.com
+    matched_by: domain
+    identity_source: the listing's own publisher.website (no lookup)
+    certified_products:
+    - product: Salesforce Platform API solution (security-reviewed)
+      product_type: salesforce-platform/api
+      certifier: Salesforce (AgentExchange / AppExchange Security Review)
+      listings: 1
+      example_listing: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
+      latest_approval: '2025-04-07'
+      lapsed: false
+      lapsed_note: the listing JSON prints solution.securityReview.approvalDate on a LIVE public listing; Salesforce
+        publishes no expiry, so no entry is marked lapsed (latest_approval is context)
+    - product: Marketing Cloud Engagement API solution (security-reviewed)
+      product_type: marketing-cloud/api
+      certifier: Salesforce (AgentExchange / AppExchange Security Review)
+      listings: 1
+      example_listing: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
+      latest_approval: '2022-03-15'
+      lapsed: false
+      lapsed_note: the listing JSON prints solution.securityReview.approvalDate on a LIVE public listing; Salesforce
+        publishes no expiry, so no entry is marked lapsed (latest_approval is context)
+    signal_note: certified_products = ONE entry per product type (listing technology) with a printed securityReview.approvalDate,
+      never per listing or version; a listing with no approval date reads nothing; listing counts / versions are
+      context
+    requirement: https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/security_review_overview.htm
+    detected_by: sweep-salesforce-appexchange.py
+    detected: '2026-10-21'
+  detected_by: sweep-salesforce-appexchange.py
+  first_seen: '2026-10-21'
 - partner_name: Docusign (partner-store)
   partner: docusign
   partner_match: mirror
@@ -227,57 +324,40 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Slack app
-- partner_name: Zapier
-  partner: zapier
-  partner_match: aggregator
+- partner_name: Salesforce (own)
+  partner: salesforce
+  partner_match: mirror
+  mirror_match: domain
   type: marketplace
-  marketplace: zapier-directory
-  channel: ipaas-listing
-  relationship: ipaas-bridge
+  relationship: platform-app
   direction: third-party
-  evidence: https://zapier.com/apps/smartsheet/integrations
-  category: null
-  contract_reference:
-    register: Zapier app directory (zapier.com/api/v4/apps)
-    spec_file: null
-    role: ipaas-connector:zapier
-    registered_name: Smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    beta: false
-    builder: unknown (not in the directory record)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
-- partner_name: Pipedream
-  partner: pipedream
-  partner_match: aggregator
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
+  mirror_of: salesforce/integrations/salesforce-integration-edges.yml
+  apps:
+  - Smartsheet Salesforce Connector
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: leadAndOpportunityManagement
+- partner_name: Salesforce Marketing Cloud (own)
+  partner: salesforce-marketing-cloud
+  partner_match: mirror
+  mirror_match: domain
   type: marketplace
-  marketplace: pipedream-components
-  channel: open-source-node
-  relationship: ipaas-bridge
+  relationship: platform-app
   direction: third-party
-  evidence: https://github.com/PipedreamHQ/pipedream/tree/d5872355ef27b4efa769f05352f2820c299a456e/components/smartsheet
-  category: null
-  contract_reference:
-    register: Pipedream components (PipedreamHQ/pipedream components/)
-    spec_file: null
-    role: ipaas-connector:pipedream
-    registered_name: smartsheet
-    matched_domain: smartsheet.com
-    matched_by: domain
-    detected_by: sweep-workflow-automation.py
-    detected: '2026-10-15'
-    signal_note: one edge per (provider, platform); actions, triggers and usage counts are context, never read
-    app_slug: smartsheet
-    actions: true
-    sources: true
-    builder: Pipedream repo (component)
-  detected_by: sweep-workflow-automation.py
-  first_seen: '2026-10-15'
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
+  mirror_of: salesforce-marketing-cloud/integrations/salesforce-marketing-cloud-integration-edges.yml
+  apps:
+  - Brandfolder Digital Asset Management for Salesforce Marketing Cloud
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: marketing
 method: searched
 checked:
 - docusign/integrations/docusign-integration-edges.yml
@@ -296,4 +376,12 @@ checked:
 - okta/integrations/okta-integration-edges.yml
 - power-bi/integrations/power-bi-integration-edges.yml
 - slack/integrations/slack-integration-edges.yml
+- https://api.appexchange.salesforce.com/recommendations/v3/listings?type=apps
+- https://api.appexchange.salesforce.com/recommendations/v3/listings?type=consultants
+- https://appexchange.salesforce.com/
+- https://appexchange.salesforce.com/consulting
+- https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/security_review_overview.htm
+- https://slack.com/marketplace
+- salesforce-marketing-cloud/integrations/salesforce-marketing-cloud-integration-edges.yml
+- salesforce/integrations/salesforce-integration-edges.yml
 source: https://hightouch.com/docs/destinations/smartsheet
