@@ -208,122 +208,6 @@
     detected: '2026-10-21'
   status: not-a-workflow
   arazzo: null
-- slug: smartsheet-docusign-partner-store
-  label: Docusign (partner-store)
-  partner: docusign
-  partner_name: Docusign (partner-store)
-  category: Integrations
-  type: marketplace
-  marketplace: partner-store
-  channel: partner-built
-  evidence: https://www.smartsheet.com/Docusign
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-google-workspace-own
-  label: Google Workspace (own)
-  partner: google-workspace
-  partner_name: Google Workspace (own)
-  category: Google Workspace app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://workspace.google.com/marketplace/app/smartsheet_for_google_docs/306818934099
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-microsoft-teams-own
-  label: Microsoft Teams (own)
-  partner: microsoft-teams
-  partner_name: Microsoft Teams (own)
-  category: Microsoft Teams app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://appsource.microsoft.com/en-us/product/office/WA200007918
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/smartsheet_v2/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-power-bi-own
-  label: Power BI (own)
-  partner: power-bi
-  partner_name: Power BI (own)
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-slack-own
-  label: Slack (own)
-  partner: slack
-  partner_name: Slack (own)
-  category: Slack app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://slack.com/marketplace/A05R4TD0JSZ-smartsheet-eu
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-salesforce-own
-  label: Salesforce (own)
-  partner: salesforce
-  partner_name: Salesforce (own)
-  category: leadAndOpportunityManagement
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-salesforce-marketing-cloud-own
-  label: Salesforce Marketing Cloud (own)
-  partner: salesforce-marketing-cloud
-  partner_name: Salesforce Marketing Cloud (own)
-  category: marketing
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: smartsheet-atlassian-own
-  label: Atlassian (own)
-  partner: atlassian
-  partner_name: Atlassian (own)
-  category: Project management
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.atlassian.com/vendors/1213385/smartsheet
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: smartsheet-mozilla-firefox-add-ons-amo
   label: Mozilla Firefox Add-ons (AMO)
   partner_name: Mozilla Firefox Add-ons (AMO)
@@ -1828,5 +1712,172 @@
     identity_source: register-name
     identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
       P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-ifttt
+  label: IFTTT
+  partner: ifttt
+  partner_name: IFTTT
+  type: marketplace
+  marketplace: ifttt-services
+  channel: ipaas-listing
+  evidence: https://ifttt.com/smartsheet
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: IFTTT service directory (ifttt.com/explore/services; ifttt.com/<service>)
+    spec_file: null
+    role: ipaas-connector:ifttt
+    registered_name: Smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    app_slug: smartsheet
+    ifttt_category: Business tools
+    builder: unknown (the service page does not say who built it)
+    detected_by: sweep-ifttt-services.py
+    detected: '2026-10-23'
+    signal_note: one edge per (provider, platform); triggers, actions and applet counts are context, never read
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-docusign-partner-store
+  label: Docusign (partner-store)
+  partner: docusign
+  partner_name: Docusign (partner-store)
+  category: Integrations
+  type: marketplace
+  marketplace: partner-store
+  channel: partner-built
+  evidence: https://www.smartsheet.com/Docusign
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-workspace-own
+  label: Google Workspace (own)
+  partner: google-workspace
+  partner_name: Google Workspace (own)
+  category: Google Workspace app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://workspace.google.com/marketplace/app/smartsheet_for_google_docs/306818934099
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-teams-own
+  label: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_name: Microsoft Teams (own)
+  category: Microsoft Teams app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200007918
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/smartsheet_v2/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-power-bi-own
+  label: Power BI (own)
+  partner: power-bi
+  partner_name: Power BI (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A05R4TD0JSZ-smartsheet-eu
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-salesforce-own
+  label: Salesforce (own)
+  partner: salesforce
+  partner_name: Salesforce (own)
+  category: leadAndOpportunityManagement
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-salesforce-marketing-cloud-own
+  label: Salesforce Marketing Cloud (own)
+  partner: salesforce-marketing-cloud
+  partner_name: Salesforce Marketing Cloud (own)
+  category: marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-atlassian-own
+  label: Atlassian (own)
+  partner: atlassian
+  partner_name: Atlassian (own)
+  category: Project management
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.atlassian.com/vendors/1213385/smartsheet
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-adobe-illustrator-own
+  label: Adobe Illustrator (own)
+  partner: adobe-illustrator
+  partner_name: Adobe Illustrator (own)
+  category: Adobe Exchange Creative Cloud listing (Illustrator, InDesign, Photoshop)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/103641/smartsheet-extension-for-adobe-creative-cloud
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-adobe-photoshop-own
+  label: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_name: Adobe Photoshop (own)
+  category: Adobe Exchange Creative Cloud listing (Illustrator, InDesign, Photoshop)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/103641/smartsheet-extension-for-adobe-creative-cloud
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null

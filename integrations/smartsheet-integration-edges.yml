@@ -216,165 +216,6 @@ edges:
     detected: '2026-10-21'
   detected_by: sweep-salesforce-appexchange.py
   first_seen: '2026-10-21'
-- partner_name: Docusign (partner-store)
-  partner: docusign
-  partner_match: mirror
-  mirror_match: domain+verified
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: partner-store
-  evidence: https://www.smartsheet.com/Docusign
-  mirror_of: docusign/integrations/docusign-integration-edges.yml
-  apps:
-  - eSignature for Smartsheet
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Integrations
-- partner_name: Google Workspace (own)
-  partner: google-workspace
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://workspace.google.com/marketplace/app/smartsheet_for_google_docs/306818934099
-  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
-  apps:
-  - Smartsheet for Google Docs
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Google Workspace app
-- partner_name: Microsoft Teams (own)
-  partner: microsoft-teams
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://appsource.microsoft.com/en-us/product/office/WA200007918
-  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
-  apps:
-  - Smartsheet Gov
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Microsoft Teams app
-  publisher_verified:
-  - Microsoft 365 Certified
-  - Microsoft 365 Publisher Attestation
-- partner_name: Okta (own)
-  partner: okta
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://www.okta.com/integrations/smartsheet_v2/
-  mirror_of: okta/integrations/okta-integration-edges.yml
-  apps:
-  - Smartsheet v2
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Single Sign-On
-  badges:
-  - OKTA_VERIFIED
-  features:
-  - SAML
-- partner_name: Power BI (own)
-  partner: power-bi
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
-  mirror_of: power-bi/integrations/power-bi-integration-edges.yml
-  apps:
-  - Smartsheet
-  listing_count: 1
-  detected: '2026-10-19'
-  detected_by: mirror-platform-listings.py
-- partner_name: Slack (own)
-  partner: slack
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://slack.com/marketplace/A05R4TD0JSZ-smartsheet-eu
-  mirror_of: slack/integrations/slack-integration-edges.yml
-  apps:
-  - Smartsheet EU
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Slack app
-- partner_name: Salesforce (own)
-  partner: salesforce
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
-  mirror_of: salesforce/integrations/salesforce-integration-edges.yml
-  apps:
-  - Smartsheet Salesforce Connector
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: leadAndOpportunityManagement
-- partner_name: Salesforce Marketing Cloud (own)
-  partner: salesforce-marketing-cloud
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
-  mirror_of: salesforce-marketing-cloud/integrations/salesforce-marketing-cloud-integration-edges.yml
-  apps:
-  - Brandfolder Digital Asset Management for Salesforce Marketing Cloud
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: marketing
-- partner_name: Atlassian (own)
-  partner: atlassian
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://marketplace.atlassian.com/vendors/1213385/smartsheet
-  mirror_of: atlassian/integrations/atlassian-integration-edges.yml
-  apps:
-  - Smartsheet Connector for Jira
-  listing_count: 1
-  detected: '2026-10-21'
-  detected_by: mirror-platform-listings.py
-  category: Project management
 - partner_name: Mozilla Firefox Add-ons (AMO)
   partner: null
   partner_match: null
@@ -1885,6 +1726,225 @@ edges:
       P856 not contradicting (Kin 2026-10-20 decision 2)
   detected_by: sweep-smartsheet-marketplace.py
   detected: '2026-10-23'
+- partner_name: IFTTT
+  partner: ifttt
+  partner_match: aggregator
+  type: marketplace
+  marketplace: ifttt-services
+  channel: ipaas-listing
+  relationship: ipaas-bridge
+  direction: third-party
+  evidence: https://ifttt.com/smartsheet
+  category: null
+  contract_reference:
+    register: IFTTT service directory (ifttt.com/explore/services; ifttt.com/<service>)
+    spec_file: null
+    role: ipaas-connector:ifttt
+    registered_name: Smartsheet
+    matched_domain: smartsheet.com
+    matched_by: domain
+    app_slug: smartsheet
+    ifttt_category: Business tools
+    builder: unknown (the service page does not say who built it)
+    detected_by: sweep-ifttt-services.py
+    detected: '2026-10-23'
+    signal_note: one edge per (provider, platform); triggers, actions and applet counts are context, never read
+  detected_by: sweep-ifttt-services.py
+  first_seen: '2026-10-23'
+- partner_name: Docusign (partner-store)
+  partner: docusign
+  partner_match: mirror
+  mirror_match: domain+verified
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: partner-store
+  evidence: https://www.smartsheet.com/Docusign
+  mirror_of: docusign/integrations/docusign-integration-edges.yml
+  apps:
+  - eSignature for Smartsheet
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Integrations
+- partner_name: Google Workspace (own)
+  partner: google-workspace
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://workspace.google.com/marketplace/app/smartsheet_for_google_docs/306818934099
+  mirror_of: google-workspace/integrations/google-workspace-integration-edges.yml
+  apps:
+  - Smartsheet for Google Docs
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Google Workspace app
+- partner_name: Microsoft Teams (own)
+  partner: microsoft-teams
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appsource.microsoft.com/en-us/product/office/WA200007918
+  mirror_of: microsoft-teams/integrations/microsoft-teams-integration-edges.yml
+  apps:
+  - Smartsheet Gov
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Microsoft Teams app
+  publisher_verified:
+  - Microsoft 365 Certified
+  - Microsoft 365 Publisher Attestation
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/smartsheet_v2/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Smartsheet v2
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - SAML
+- partner_name: Power BI (own)
+  partner: power-bi
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://learn.microsoft.com/en-us/power-query/connectors/smartsheet
+  mirror_of: power-bi/integrations/power-bi-integration-edges.yml
+  apps:
+  - Smartsheet
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A05R4TD0JSZ-smartsheet-eu
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Smartsheet EU
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
+- partner_name: Salesforce (own)
+  partner: salesforce
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=2d5dd1d6-6d0f-4bb6-9bfd-556859b830a9
+  mirror_of: salesforce/integrations/salesforce-integration-edges.yml
+  apps:
+  - Smartsheet Salesforce Connector
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: leadAndOpportunityManagement
+- partner_name: Salesforce Marketing Cloud (own)
+  partner: salesforce-marketing-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appexchange.salesforce.com/appxListingDetail?listingId=a0N4V00000G6frNUAR
+  mirror_of: salesforce-marketing-cloud/integrations/salesforce-marketing-cloud-integration-edges.yml
+  apps:
+  - Brandfolder Digital Asset Management for Salesforce Marketing Cloud
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: marketing
+- partner_name: Atlassian (own)
+  partner: atlassian
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://marketplace.atlassian.com/vendors/1213385/smartsheet
+  mirror_of: atlassian/integrations/atlassian-integration-edges.yml
+  apps:
+  - Smartsheet Connector for Jira
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: Project management
+- partner_name: Adobe Illustrator (own)
+  partner: adobe-illustrator
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/103641/smartsheet-extension-for-adobe-creative-cloud
+  mirror_of: adobe-illustrator/integrations/adobe-illustrator-integration-edges.yml
+  apps:
+  - Smartsheet Extension for Adobe Creative Cloud
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Illustrator, InDesign, Photoshop)
+- partner_name: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/103641/smartsheet-extension-for-adobe-creative-cloud
+  mirror_of: adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
+  apps:
+  - Smartsheet Extension for Adobe Creative Cloud
+  - Smartsheet for Adobe Photoshop
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Illustrator, InDesign, Photoshop)
 method: searched
 checked:
 - docusign/integrations/docusign-integration-edges.yml
@@ -1918,6 +1978,11 @@ checked:
 - https://dir.texas.gov/resource-library-item/tx-ramp-certified-cloud-products
 - https://www.smartsheet.com/marketplace/apps
 - https://www.smartsheet.com/sitemap.xml
+- https://ifttt.com/explore/services
+- https://ifttt.com/sitemap_services.xml
+- https://ifttt.com/smartsheet
+- adobe-illustrator/integrations/adobe-illustrator-integration-edges.yml
+- adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
 source: https://hightouch.com/docs/destinations/smartsheet
 marketplace_apps:
 - marketplace: own
