@@ -406,3 +406,1427 @@
     detected: '2026-10-22'
   status: not-a-workflow
   arazzo: null
+- slug: smartsheet-smartsheet-integrations-for-adobe-creative-cloud
+  label: Smartsheet Integrations for Adobe Creative Cloud
+  partner: adobe-creative-cloud
+  partner_name: Smartsheet Integrations for Adobe Creative Cloud
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/adobe-creative-cloud
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Adobe Creative Cloud
+    matched_domain: adobe.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Smartsheet Integrations for Adobe Creative Cloud
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-smartsheet-jira-connector
+  label: Smartsheet Jira Connector
+  partner: jira
+  partner_name: Smartsheet Jira Connector
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/jira-connector
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Smartsheet Jira Connector
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Smartsheet Jira Connector
+    register_name_note: register-name 'jira' = jira; wikidata P856 atlassian.com agrees or unheld
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-teams
+  label: Microsoft Teams
+  partner: microsoft-teams
+  partner_name: Microsoft Teams
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-teams
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Microsoft Teams
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Microsoft Teams
+    register_name_note: register-name 'microsoftteams' = microsoft-teams; wikidata P856 microsoft.com agrees or
+      unheld
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-smartsheet-on-oculus
+  label: Smartsheet on Oculus
+  partner: oculus
+  partner_name: Smartsheet on Oculus
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/oculus
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Oculus
+    matched_domain: oculus.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Smartsheet on Oculus
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-smartsheet-okta-integrations
+  label: Smartsheet + Okta Integrations
+  partner: okta
+  partner_name: Smartsheet + Okta Integrations
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/okta
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Smartsheet + Okta Integrations
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Smartsheet + Okta Integrations
+    register_name_note: register-name 'okta' = okta; no wikidata P856
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-smartsheet-salesforce-connector
+  label: Smartsheet Salesforce Connector
+  partner: salesforce
+  partner_name: Smartsheet Salesforce Connector
+  category: Smartsheet-built connector
+  type: marketplace
+  marketplace: own
+  channel: provider-built
+  evidence: https://www.smartsheet.com/marketplace/apps/salesforce
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-provider-built-app
+    registered_name: Salesforce
+    matched_domain: salesforce.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Smartsheet Salesforce Connector
+    signal_note: Smartsheet's own connector to this vendor (platform's own)
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-adobe-xd
+  label: Adobe XD
+  partner: adobe
+  partner_name: Adobe XD
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/adobe-xd
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Adobe XD
+    matched_domain: adobe.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Adobe XD
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-amazon-quick
+  label: Amazon Quick
+  partner: amazon
+  partner_name: Amazon Quick
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/amazon-quick-mcp-connector
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Amazon Quick
+    matched_domain: amazon.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Amazon Quick
+    - Amazon Quick Suite
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-atlassian-rovo
+  label: Atlassian Rovo
+  partner: atlassian
+  partner_name: Atlassian Rovo
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/atlassian-rovo
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Atlassian Rovo
+    matched_domain: atlassian.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Atlassian Rovo
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-box
+  label: Box
+  partner: box
+  partner_name: Box
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/box
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Box
+    matched_domain: box.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Box
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-cdata-drivers-and-connectors-for-accessing-smartsheet-data
+  label: CData Drivers and Connectors for accessing Smartsheet Data
+  partner: cdata
+  partner_name: CData Drivers and Connectors for accessing Smartsheet Data
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/cdata-drivers-and-connectors-accessing-smartsheet-data
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: CData Drivers and Connectors for accessing Data
+    matched_domain: cdata.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - CData Drivers and Connectors for accessing Smartsheet Data
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-centrify
+  label: Centrify
+  partner: centrify
+  partner_name: Centrify
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/centrify
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Centrify
+    matched_domain: centrify.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Centrify
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-claude
+  label: Claude
+  partner: claude
+  partner_name: Claude
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/claude
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Claude
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Claude
+    register_name_note: register-name 'claude' = claude; no wikidata P856
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-databricks-lakeflow-connect-for-smartsheet
+  label: Databricks Lakeflow Connect for Smartsheet
+  partner: databricks
+  partner_name: Databricks Lakeflow Connect for Smartsheet
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/databricks-lakeflow-connect-smartsheet
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Databricks Lakeflow Connect
+    matched_domain: databricks.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Databricks Lakeflow Connect for Smartsheet
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-domo
+  label: Domo
+  partner: domo
+  partner_name: Domo
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/domo
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Domo
+    matched_domain: domo.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Domo
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-dropbox
+  label: Dropbox
+  partner: dropbox
+  partner_name: Dropbox
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/dropbox
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Dropbox
+    matched_domain: dropbox.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Dropbox
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-egnyte
+  label: Egnyte
+  partner: egnyte
+  partner_name: Egnyte
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/egnyte
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Egnyte
+    matched_domain: egnyte.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Egnyte
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-figma
+  label: Figma
+  partner: figma
+  partner_name: Figma
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/figma
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Figma
+    matched_domain: figma.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Figma
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-formstack
+  label: Formstack
+  partner: formstack
+  partner_name: Formstack
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/formstack
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Formstack
+    matched_domain: formstack.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Formstack
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-glean
+  label: Glean
+  partner: glean
+  partner_name: Glean
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/glean
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Glean
+    matched_domain: glean.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Glean
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-gmail
+  label: Gmail
+  partner: gmail
+  partner_name: Gmail
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/gmail
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Gmail
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Gmail
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-calendar-connector
+  label: Google Calendar Connector
+  partner: google-calendar
+  partner_name: Google Calendar Connector
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-calendar-connector
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Calendar
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Google Calendar Connector
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-chat
+  label: Google Chat
+  partner: google-chat
+  partner_name: Google Chat
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-chat
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Chat
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Google Chat
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-docs
+  label: Google Docs
+  partner: google-docs
+  partner_name: Google Docs
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-docs
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Docs
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Google Docs
+    - Google Docs Online
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-drive
+  label: Google Drive
+  partner: google-drive
+  partner_name: Google Drive
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-drive
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Drive
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Google Drive
+    register_name_note: register-name 'googledrive' = google-drive; wikidata P856 google.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-forms
+  label: Google Forms
+  partner: google-forms
+  partner_name: Google Forms
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-forms
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Forms
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Google Forms
+    register_name_note: register-name 'googleforms' = google-forms; wikidata P856 google.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-sheets
+  label: Google Sheets
+  partner: google-sheets
+  partner_name: Google Sheets
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-sheets
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Sheets
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Google Sheets
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-slides
+  label: Google Slides
+  partner: google-slides
+  partner_name: Google Slides
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-slides
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Slides
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Google Slides
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-google-workspace
+  label: Google Workspace
+  partner: google-workspace
+  partner_name: Google Workspace
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/google-workspace
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Google Workspace
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Google Workspace
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-grammarly-app-actions
+  label: Grammarly App Actions
+  partner: grammarly
+  partner_name: Grammarly App Actions
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/grammarly-app-actions
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Grammarly App Actions
+    matched_domain: grammarly.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Grammarly App Actions
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-data-sync-by-hubspot-for-smartsheet
+  label: Data sync by HubSpot for Smartsheet
+  partner: hubspot
+  partner_name: Data sync by HubSpot for Smartsheet
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/data-sync-hubspot-smartsheet
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Data sync by HubSpot for Smartsheet
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Data sync by HubSpot for Smartsheet
+    register_name_note: register-name 'hubspot' = hubspot; wikidata P856 hubspot.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-lindy
+  label: Lindy
+  partner: lindy
+  partner_name: Lindy
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/lindy
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Lindy
+    matched_domain: lindy.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Lindy
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-lucidchart
+  label: Lucidchart
+  partner: lucid
+  partner_name: Lucidchart
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/lucidchart
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Lucidchart
+    matched_domain: lucid.co
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Lucidchart
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-make
+  label: Make
+  partner: make
+  partner_name: Make
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/make
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Make
+    matched_domain: make.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Make
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-copilot
+  label: Microsoft Copilot
+  partner: microsoft-copilot
+  partner_name: Microsoft Copilot
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-copilot
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Microsoft Copilot
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Microsoft Copilot
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-outlook-calendar
+  label: Microsoft Outlook Calendar
+  partner: microsoft-outlook
+  partner_name: Microsoft Outlook Calendar
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-outlook-calendar
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Microsoft Outlook Calendar
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Microsoft Outlook Calendar
+    - Outlook
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-power-automate
+  label: Microsoft Power Automate
+  partner: microsoft-power-automate
+  partner_name: Microsoft Power Automate
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-flow
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Microsoft Power Automate
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Microsoft Power Automate
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-miro
+  label: Miro
+  partner: miro
+  partner_name: Miro
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/miro
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Miro
+    matched_domain: miro.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - Miro
+    - Miro Integration
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-onelogin
+  label: OneLogin
+  partner: onelogin
+  partner_name: OneLogin
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/onelogin
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: OneLogin
+    matched_domain: onelogin.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - OneLogin
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-pingone
+  label: PingOne
+  partner: pingone
+  partner_name: PingOne
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/pingone
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: PingOne
+    matched_domain: pingidentity.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - PingOne
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-power-bi
+  label: Microsoft Power BI
+  partner: power-bi
+  partner_name: Microsoft Power BI
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-power-bi
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Microsoft Power BI
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Microsoft Power BI
+    - Power BI
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-prezi
+  label: Prezi
+  partner: prezi
+  partner_name: Prezi
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/prezi
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Prezi
+    matched_domain: prezi.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Prezi
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-sync-for-procore
+  label: Sync for Procore
+  partner: procore
+  partner_name: Sync for Procore
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/sync-for-procore
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Sync for Procore
+    matched_domain: procore.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Sync for Procore
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-servicenow-connector
+  label: ServiceNow Connector
+  partner: servicenow
+  partner_name: ServiceNow Connector
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/servicenow-connector
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: ServiceNow Connector
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - ServiceNow Connector
+    register_name_note: register-name 'servicenow' = servicenow; wikidata P856 servicenow.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-microsoft-sharepoint
+  label: Microsoft SharePoint
+  partner: sharepoint
+  partner_name: Microsoft SharePoint
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/microsoft-sharepoint
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Microsoft SharePoint
+    matched_domain: microsoft.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Microsoft SharePoint
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-skyhigh-security-casb-for-smartsheet
+  label: Skyhigh Security CASB for Smartsheet
+  partner: skyhigh
+  partner_name: Skyhigh Security CASB for Smartsheet
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/skyhigh-security-smartsheet
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Skyhigh Security
+    matched_domain: skyhighsecurity.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Skyhigh Security CASB for Smartsheet
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-tableau-online
+  label: Tableau Online
+  partner: tableau
+  partner_name: Tableau Online
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/tableau-online
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Tableau
+    matched_domain: tableau.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Tableau Online
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-tray-ai
+  label: Tray.ai
+  partner: tray-ai
+  partner_name: Tray.ai
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/trayai
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Tray.ai
+    matched_domain: tray.ai
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Tray.ai
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-uipath-for-smartsheet
+  label: UiPath for Smartsheet
+  partner: uipath
+  partner_name: UiPath for Smartsheet
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/uipath
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: UiPath
+    matched_domain: uipath.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - UiPath for Smartsheet
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-unito-two-way-sync-for-smartsheet
+  label: Unito Two-Way Sync for Smartsheet
+  partner: unito
+  partner_name: Unito Two-Way Sync for Smartsheet
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/unito-two-way-sync-smartsheet
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Unito
+    matched_domain: unito.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Unito Two-Way Sync for Smartsheet
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-vimeo
+  label: Vimeo
+  partner: vimeo
+  partner_name: Vimeo
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/vimeo
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Vimeo
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - Vimeo
+    register_name_note: register-name 'vimeo' = vimeo; wikidata P856 vimeo.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-workato
+  label: Workato
+  partner: workato
+  partner_name: Workato
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/workato
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: Workato
+    matched_domain: workato.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Workato
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+  status: not-a-workflow
+  arazzo: null
+- slug: smartsheet-youtube
+  label: YouTube
+  partner: youtube
+  partner_name: YouTube
+  category: Integration (builder not stated)
+  type: marketplace
+  marketplace: own
+  channel: unknown
+  evidence: https://www.smartsheet.com/marketplace/apps/youtube
+  source: edge
+  relationship: platform-app
+  contract_reference:
+    register: Smartsheet Marketplace apps (smartsheet.com/marketplace/apps; sitemap.xml + app pages + partner pages)
+    spec_file: null
+    role: smartsheet-app-builder-unstated
+    registered_name: YouTube
+    matched_domain: null
+    matched_by: register-name
+    listings: 1
+    sample_apps:
+    - YouTube
+    register_name_note: register-name 'youtube' = youtube; wikidata P856 youtube.com agrees or unheld
+    signal_note: 'the listing does not state who built the connector: direction unknown, kept out of position shares'
+    detected_by: sweep-smartsheet-marketplace.py
+    detected: '2026-10-23'
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  status: not-a-workflow
+  arazzo: null
